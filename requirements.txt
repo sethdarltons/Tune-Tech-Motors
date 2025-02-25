@@ -1,0 +1,7 @@
+django
+django-static
+crispy-bootstrap5
+django-crispy-forms
+gunicorn
+pillow
+requests
