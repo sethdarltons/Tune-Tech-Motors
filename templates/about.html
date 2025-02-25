@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'sty.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="slider">
+            <div class="slides" style="background-image: url('{% static "img.jpg" %}');">
+                <div class="content"></div>
+            </div>
+            <div class="slides" style="background-image: url('{% static "Atb.jpeg" %}');">
+                <div class="content">
+                    <h2>Our Journey</h2>
+                    <p>Tune-Tech motors began with a vision to redefine auto cars. In the year 2014, Fred Odhiambo turned a lifelong passion for cars into a mission to provide unparalleled automotive service.
+                         What started as a modest workshop in Lodwar has grown into a state-of-the-art service center, thanks to our dedication to excellence and the trust of our community.
+                    </p>
+                </div>
+            </div>
+            <div class="slides" style="background-image: url('{% static "cont.jpg" %}');">
+                <div class="content">
+                    <h2>What We Stand For</h2>
+                    <p>We believe in more than just fixing cars. We are committed to:</p>
+                    <ul class="li">
+                        <li>Integrity: Providing honest assessments and transparent pricing to our customers.</li>
+                        <li>Quality: Using only the best parts and the latest technology to repair your car.</li>
+                        <li>Customer Care: Ensuring every customer feels valued and heard.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slides" style="background-image: url('{% static "img.jpg" %}');">
+                <div class="content">
+                    <h2>Meet The Team</h2>
+                    <p>Our team is our pride. Each member brings a unique set of skills and a dedication to excellence.
+                        Together we are committed to delivering top-notch service and exceeding your expectations.</p>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <span class="prev"></span>
+            <span class="next"></span>
+        </div>
+    </div>
+    <script>
+        let next = document.querySelector('.next');
+        let prev = document.querySelector('.prev');
+        let slider = document.querySelector('.slider');
+
+        next.addEventListener('click', function(){
+            let slides = document.querySelectorAll('.slides');
+            slider.appendChild(slides[0]);
+        });
+
+        prev.addEventListener('click', function(){
+            let slides = document.querySelectorAll('.slides');
+            slider.prepend(slides[slides.length -1]);
+        });
+    </script>
+</body>
+</html>

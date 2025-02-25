@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="header">
+                <h1>Our Blog</h1>
+                <p>Whether you're a car enthusiast, a DIY mechanic, or just looking to stay informed about the automotive world, our blog offers valuable insights
+                     and practical tips to keep you and your
+                     vehicle in top condition. Join us as we explore the fascinating world of automobiles and help you make the most of your driving experience!</p>
+            </div>
+
+            <!-- Image Slider -->
+            <div class="slider">
+                <div class="slide active" style="background-image: url('{% static 'abt.jpeg' %}');"></div>
+                <div class="slide" style="background-image: url('{% static 'Atb.jpeg' %}');"></div>
+                <div class="slide" style="background-image: url('{% static 'about.jpeg' %}');"></div>
+            </div>
+
+            <!-- Combined Text Section -->
+            <div class="combined-text">
+                <h2>Feature Story: Reviving John’s Land Cruiser 79 Series</h2>
+                <h3>The Challenge</h3>
+                <p>John, a car enthusiast, had always dreamed of restoring his Land Cruiser 79 Series.
+                     After finding a rusted, worn-out model, he turned to Tune-Tech Motors for help!</p>
+                <h3>The Restoration Process</h3>
+                <ul>
+                    <li>Engine Overhaul: Our team disassembled the old engine, cleaned, repaired, or replaced parts, and installed new pistons, bearings, and gaskets.</li>
+                    <li>Bodywork and Paint: We replaced rusted panels, sanded the body, and applied a fresh coat of Candy Apple Red paint.</li>
+                    <li>Interior Refurbishment: We reupholstered seats, installed new carpeting, and upgraded the dashboard with modern touches.</li>
+                    <li>Suspension and Brakes: Upgraded suspension and new brakes improved the Mustang’s ride quality and safety.</li>
+                </ul>
+                <h3>The Reveal</h3>
+                <p>After months of work, John saw his fully restored Land Cruiser gleaming in the shop. The rebuilt engine roared to life,
+                     and the car handled beautifully, exceeding his expectations.</p>
+                <h3>Customer Satisfaction</h3>
+                <p>John was thrilled with the results, praising our team’s 
+                    craftsmanship. His Land Cruiser became a showstopper at local car shows, a testament to Tune-Tech Motors' expertise and dedication.</p>
+            </div>
+
+            <!-- Warning Signs Section -->
+            <div class="me">
+                <h4>Warning Signs: When to Seek Professional Help</h4>
+                <p>While it’s useful to understand the basics of car troubleshooting, some issues require professional attention.
+                     Here are a few warning signs that indicate it's time to visit Tune Tech Motors:</p>
+                <ul>
+                    <li>Persistent or Loud Noises: If any engine noise persists despite your efforts to diagnose and resolve it, seek professional help to prevent further damage.</li>
+                    <li>Check Engine Light: If the check engine light accompanies strange noises, it’s crucial to have your car checked by a professional immediately.</li>
+                    <li>Performance Issues: Any noticeable decline in your vehicle’s performance, such as power loss, stalling, or rough idling, should be examined by a mechanic.</li>
+                </ul>
+                <p>By addressing engine noises promptly and seeking professional help when necessary, you can maintain your vehicle's health and avoid more costly repairs down the line.
+                     For expert diagnosis and repairs, contact Tune Tech Motors today.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showNextSlide() {
+            // Hide the current slide
+            slides[currentSlide].classList.remove('active');
+            slides[currentSlide].classList.add('exit');
+
+            // Move to the next slide
+            currentSlide = (currentSlide + 1) % slides.length;
+
+            // Show the next slide
+            slides[currentSlide].classList.add('active');
+            slides[currentSlide].classList.remove('exit');
+        }
+
+        // Start the animation
+        setInterval(showNextSlide, 5000); // Change image every 5 seconds
+    </script>
+</body>
+</html>
